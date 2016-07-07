@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="bab6b4da-429f-4084-ad43-a8f001c9e3e7" activeEnvironment="Default" name="Helloworld" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="3f8bd14b-d061-4707-80a9-ba6bdb2faa0f" wsaVersion="NONE" name="HelloWorld_Binding" type="wsdl" bindingName="{http://www.dineshonjava.com/wsdl/HelloWorldService.wsdl}HelloWorld_Binding" soapVersion="1_1" anonymous="optional" definition="http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS?wsdl"><con:part><con:url>http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS?wsdl</con:url><con:content><![CDATA[<WL5G3N0:definitions name="HelloWorldService" targetNamespace="http://www.dineshonjava.com/wsdl/HelloWorldService.wsdl" xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/" xmlns:WL5G3N1="http://www.w3.org/2001/XMLSchema" xmlns:WL5G3N2="http://www.dineshonjava.com/wsdl/HelloWorldService.wsdl" xmlns:WL5G3N3="http://schemas.xmlsoap.org/wsdl/soap/">
+  <WL5G3N0:message name="SayHelloRequest">
+    <WL5G3N0:part name="input" type="WL5G3N1:string"/>
+  </WL5G3N0:message>
+  <WL5G3N0:message name="SayHelloResponse">
+    <WL5G3N0:part name="output" type="WL5G3N1:string"/>
+  </WL5G3N0:message>
+  <WL5G3N0:portType name="HelloWorld_PortType">
+    <WL5G3N0:operation name="sayHelloWorld">
+      <WL5G3N0:input message="WL5G3N2:SayHelloRequest"/>
+      <WL5G3N0:output message="WL5G3N2:SayHelloResponse"/>
+    </WL5G3N0:operation>
+  </WL5G3N0:portType>
+  <WL5G3N0:binding name="HelloWorld_Binding" type="WL5G3N2:HelloWorld_PortType">
+    <WL5G3N3:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <WL5G3N0:operation name="sayHelloWorld">
+      <WL5G3N3:operation soapAction="sayHelloWorld"/>
+      <WL5G3N0:input>
+        <WL5G3N3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:examples:helloworldservice" use="encoded"/>
+      </WL5G3N0:input>
+      <WL5G3N0:output>
+        <WL5G3N3:body encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:dineshonjava:helloworldservice" use="encoded"/>
+      </WL5G3N0:output>
+    </WL5G3N0:operation>
+  </WL5G3N0:binding>
+  <WL5G3N0:service name="HelloWorld_Service">
+    <WL5G3N0:documentation>WSDL File for HelloWorldService</WL5G3N0:documentation>
+    <WL5G3N0:port binding="WL5G3N2:HelloWorld_Binding" name="HelloWorld_Port">
+      <WL5G3N3:address location="http://9.79.186.22:7001/HelloWorld_Demo/proxy/Hello_World_PS"/>
+    </WL5G3N0:port>
+  </WL5G3N0:service>
+</WL5G3N0:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS</con:endpoint></con:endpoints><con:operation id="76311f1d-8fb4-443a-ac69-e4955c281c26" isOneWay="false" action="sayHelloWorld" name="sayHelloWorld" bindingOperationName="sayHelloWorld" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="cdf63258-4f0a-4b52-bac3-e457feb41a6d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloworldservice">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:sayHelloWorld soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <input xsi:type="xsd:string">?</input>\r
+      </urn:sayHelloWorld>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="sayHelloWorld"/></con:call></con:operation></con:interface><con:testSuite id="8feba586-7cc2-499a-90fa-1b8ad2a99b7d" name="HelloWorld_Binding TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="6c527ea9-16fe-418b-8f8d-f86c88c1336d" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sayHelloWorld TestCase" searchProperties="true"><con:settings/><con:testStep type="request" id="344eb4ea-9048-4443-8d11-fb2ccb139855" name="sayHelloWorld"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>HelloWorld_Binding</con:interface><con:operation>sayHelloWorld</con:operation><con:request name="sayHelloWorld" id="c21c3c21-63aa-49f0-8719-1bb913f5811d"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:7001/HelloWorld_Demo/proxy/Hello_World_PS</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:examples:helloworldservice">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <urn:sayHelloWorld soapenv:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">\r
+         <input xsi:type="xsd:string">test</input>\r
+      </urn:sayHelloWorld>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig action="sayHelloWorld" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>
